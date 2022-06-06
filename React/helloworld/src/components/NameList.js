@@ -1,5 +1,9 @@
 import React from "react";
 import Person from "./Person";
+
+// List rendering in funtional component
+// also used props in Person component
+
 // function NameList() {
 //   const names = ["Ironman", "Spiderman", "Thor"];
 //   const nameList = names.map((name) => <h1>{name}</h1>);
@@ -29,7 +33,10 @@ function NameList() {
     },
   ];
   // Person componet is added used in application
-  const personList = person.map((person) => <Person persons={person} />);
+  const personList = person.map((person) => (
+    // key is used as unique parameter not for us it is for react
+    <Person key={person.name} persons={person} />
+  ));
   return (
     <div>
       <div>{personList}</div>
